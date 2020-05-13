@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('home.urls')),  # (url route, view, kwargs, name)
     path('admin/', admin.site.urls),
+    path('models/', include('struc_model_repo.urls')),
 ]
