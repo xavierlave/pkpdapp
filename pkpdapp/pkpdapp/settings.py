@@ -32,8 +32,6 @@ ALLOWED_HOSTS = []
 # migrate` first
 
 INSTALLED_APPS = [
-    'home.apps.HomeConfig',
-    'struc_model_repo.apps.StrucModelRepoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +55,7 @@ ROOT_URLCONF = 'pkpdapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'pkpdapp', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'GB'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -121,3 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'pkpdapp', 'static'),
+    ]
