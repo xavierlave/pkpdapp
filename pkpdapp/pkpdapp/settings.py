@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     # internal apps
     'simulate.apps.SimulateConfig',
+    'data_import',
 ]
 
 MIDDLEWARE = [
