@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
     # internal apps
     'simulate.apps.SimulateConfig',
-    'data_import',
+    'data_upload',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +177,7 @@ PLOTLY_COMPONENTS = [
     'dpd_components',
     'dpd_static_support',
 ]
+
+# Media setting, e.g. where data is stored
+MEDIA_URL = '/MEDIA/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pkpdapp', 'media')

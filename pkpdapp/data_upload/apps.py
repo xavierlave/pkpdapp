@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class DataImportConfig(AppConfig):
-    name = 'data_import'
+    name = 'data_upload'

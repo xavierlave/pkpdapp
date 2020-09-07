@@ -21,5 +21,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('generic/', views.GenericView.as_view(), name='generic'),
     path('simulate/', include('simulate.urls')),
+    path('upload/', include('data_upload.urls')),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]
