@@ -4,21 +4,17 @@
 # copyright notice and full license details.
 #
 
+from .forms import PharmacodynamicDataForm
+from django.views.generic.edit import FormView
 
-from django.shortcuts import render
 
+class PharmacodynamicDataView(FormView):
+    template_name = 'auce/upload.html'
+    form_class = PharmacodynamicDataForm
+    success_url = '/generic/'
 
-def upload_file_view(request):
-    # Create form
-    form = DataForm(request.POST or None, request.FILES or None)
-
-    if form.is_valid():
-        # Save form
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
         form.save()
-
-        # Reset form
-        form = DataForm(request.POST or None, request.FILES or None)
-
-    context = {'form': form}
-
-    return render(request, 'data_upload/upload.html', context)
+        return super().form_valid(form)
