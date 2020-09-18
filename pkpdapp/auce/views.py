@@ -5,16 +5,10 @@
 #
 
 from .forms import PharmacodynamicDataForm
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
 
 
-class PharmacodynamicDataView(FormView):
+class PharmacodynamicDataView(CreateView):
     template_name = 'auce/upload.html'
     form_class = PharmacodynamicDataForm
     success_url = '/generic/'
-
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        form.save()
-        return super().form_valid(form)
