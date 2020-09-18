@@ -9,7 +9,7 @@ from django import forms
 from .models import PharmacodynamicDataModel
 
 
-class PharmacodynamicDataFrom(forms.ModelForm):
+class PharmacodynamicDataForm(forms.ModelForm):
     class Meta:
         model = PharmacodynamicDataModel
         fields = ['data_file']
