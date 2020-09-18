@@ -14,6 +14,9 @@ env
 # database file (not sure yet what its good for)
 db.sqlite3
 
+# Ignore migrations
+migrations
+
 # DS
 .DS_Store
 
