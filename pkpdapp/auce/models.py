@@ -6,4 +6,9 @@
 
 from django.db import models
 
-# Create your models here.
+
+class PharmacodynamicDataModel(models.Model):
+    """
+    This model class provides the interface to the PD database.
+    """
+    data_file = models.FileField(upload_to='uploads/pd_data/')
