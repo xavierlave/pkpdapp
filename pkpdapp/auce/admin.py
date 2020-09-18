@@ -6,4 +6,7 @@
 
 from django.contrib import admin
 
-# Register your models here.
+from .models import PharmacodynamicDataModel
+
+
+admin.site.register(PharmacodynamicDataModel)
