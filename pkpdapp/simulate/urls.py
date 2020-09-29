@@ -7,9 +7,7 @@
 from django.urls import path
 
 from . import views
-from . import (  # noqa
-    demo_simulation_dash_board
-)
+from . import demo_simulation_dash_board  # noqa
 
 
 app_name = 'simulate'
