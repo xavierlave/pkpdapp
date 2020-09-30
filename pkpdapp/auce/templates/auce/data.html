@@ -2,8 +2,46 @@
 {% load static %}
 
 {% block content %}
-<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<section class="tiles">
+	<article class="pddata">
+		<span class="image">
+			<img src="{% static 'images/pic03.jpg' %}" alt="" />
+		</span>
+        {% if user.is_authenticated %}
+            <a href="#subtask">
+                <h3>Get Dataset</h3>
+                <div class="content">
+                    <p>Get your pharmacodynamic dataset from previous uploads.</p>
+                </div>
+            </a>
+        {% else %}
+            <a href="{% url 'login'%}?next={{request.path}}">
+                <h3>Get Dataset</h3>
+                <div class="content">
+                    <p>Get your pharmacodynamic dataset from previous uploads.</p>
+                </div>
+            </a>
+        {% endif %}
+	</article>
+    <article class="pddata">
+		<span class="image">
+			<img src="{% static 'images/pic03.jpg' %}" alt="" />
+		</span>
+		<a href="#subtask">
+			<h3>Upload Dataset</h3>
+			<div class="content">
+				<p>Upload your pharmacodynamic dataset for analysis.</p>
+			</div>
+		</a>
+	</article>
+</section>
+
+<div id="subtask">
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Upload">
+    <div align="right">
+        <input class="submitButton2" type="submit" value="Upload">
+    </div>
 </form>
+</div>
 {% endblock %}
