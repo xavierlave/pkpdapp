@@ -9,4 +9,8 @@ from django.contrib import admin
 from .models import PharmacodynamicDataModel
 
 
-admin.site.register(PharmacodynamicDataModel)
+class PharmacodynamicDataModelAdmin(admin.ModelAdmin):
+    readonly_fields = ('upload_date',)
+
+
+admin.site.register(PharmacodynamicDataModel, PharmacodynamicDataModelAdmin)
