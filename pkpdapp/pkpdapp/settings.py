@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'auce.apps.AuceConfig',
     'explore_data.apps.ExploreDataConfig',
     'simulate.apps.SimulateConfig',
+
+    # Needs to be last: https://github.com/un1t/django-cleanup
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
