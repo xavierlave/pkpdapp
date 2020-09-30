@@ -312,6 +312,8 @@ input, select, textarea {
 		text-align: right;
 	}
 
+	.submitButton2 {color: white;}
+
 /* Row */
 
 	.row {
@@ -2860,6 +2862,57 @@ input, select, textarea {
 	@media screen and (max-width: 980px) {
 
 		.tiles article.model {
+			width: calc(980px * 0.25);
+			-moz-transform: scale(0.9);
+			-webkit-transform: scale(0.9);
+			-ms-transform: scale(0.9);
+			transform: scale(0.9);
+		}
+
+	}
+
+	/* For PD Data - subclasses Tiles */
+
+	.tiles article.pddata {
+		-moz-transition: -moz-transform 0.5s ease, opacity 0.5s ease;
+		-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+		-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
+		transition: transform 0.5s ease, opacity 0.5s ease;
+		position: relative;
+		width: 20vw;
+		margin: 0 0 0 0;
+		-moz-transform: scale(0.9);
+		-webkit-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		transform: scale(0.9);
+		background-color: #3f3e3e;
+		border: solid #7ecaf6
+	}
+
+		.tiles article.pddata > a h3 {
+			margin: 0;
+		}
+
+		.tiles article.pddata > .image:before {
+			background-color: #3f3e3e;
+			border: double #7ecaf6
+		}
+
+	@media screen and (max-width: 1280px) {
+
+			.tiles article.pddata {
+				width: 20vw;
+				-moz-transform: scale(0.9);
+				-webkit-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				transform: scale(0.9);
+			}
+
+	}
+
+	@media screen and (max-width: 980px) {
+
+		.tiles article.pddata {
 			width: calc(980px * 0.25);
 			-moz-transform: scale(0.9);
 			-webkit-transform: scale(0.9);
