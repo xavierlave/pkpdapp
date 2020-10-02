@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('explore_data/', include('explore_data.urls')),
     path('generic/', views.GenericView.as_view(), name='generic'),
+    path('nca/', include('nca.urls')),
     path('simulate/', include('simulate.urls')),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]

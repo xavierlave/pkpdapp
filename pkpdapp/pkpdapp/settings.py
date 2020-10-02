@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     # internal apps
     'explore_data.apps.ExploreDataConfig',
+    'nca.apps.NcaConfig',
     'simulate.apps.SimulateConfig',
 ]
 
