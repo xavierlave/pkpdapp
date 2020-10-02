@@ -623,6 +623,8 @@ AUMC_visibility=AUMC_visibility+[False]*2
 Data_visibility=Data_visibility+[False]*2
 Tmax_visibility=Tmax_visibility+[True]*2
 
+fig.update_layout(template="plotly_white")
+
 # create buttons
 fig.update_layout(
     updatemenus=[
