@@ -14,19 +14,20 @@ import plotly.graph_objects as go
 
 # Import data
 path = settings.MEDIA_ROOT
-data = pd.read_csv(path + '/uploads/pd_data/demo_pd_data.csv')
-
-
-
+try:
+    data = pd.read_csv(path + '/uploads/pd_data/demo_pd_data.csv')
+except FileNotFoundError:
+    data = None
 
 # Create figure
 fig = go.Figure()
 
 # Add data
-fig.add_trace(go.Scatter(
-    x=data['Time'],
-    y=data['Y'],
-))
+if isinstance(data, pd.DataFrame):
+    fig.add_trace(go.Scatter(
+        x=data['Time'],
+        y=data['Y'],
+    ))
 
 # Set height of image
 fig.update_layout(

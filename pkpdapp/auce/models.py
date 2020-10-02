@@ -15,6 +15,6 @@ class PharmacodynamicDataModel(models.Model):
         verbose_name="Study Name", max_length=100, blank=True, null=True)
     data_file = models.FileField(
         verbose_name="Data File", max_length=100, upload_to='uploads/pd_data/')
-    # upload_date = models.DateTimeField(auto_now=True)
+    upload_date = models.DateTimeField(auto_now_add=True)
     # number_id
     # ids

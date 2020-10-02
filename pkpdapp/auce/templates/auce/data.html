@@ -37,8 +37,15 @@
 </section>
 
 <div id="subtask">
+    <h2> Upload Dataset</h2>
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
-    {{ form.as_p }}
+    <label>
+        <b>Study Name:</b>{{ form.file_name }}
+    </label>
+    <label class="file">
+        <input type="file" id="file">
+        <span class="file-custom"></span>
+    </label>
     <div align="right">
         <input class="submitButton2" type="submit" value="Upload">
     </div>

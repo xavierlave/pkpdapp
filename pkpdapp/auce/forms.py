@@ -15,24 +15,35 @@ class PharmacodynamicDataForm(forms.ModelForm):
         model = PharmacodynamicDataModel
         fields = ['file_name', 'data_file']
 
-    def clean(self):
-        # If not file name provided, use name of file
-        if self.cleaned_data['file_name'] is None:
-            self.cleaned_data['file_name'] = self.cleaned_data[
-                'data_file'].name
+        widgets = {
+            'file_name': forms.TextInput(attrs={
+                'class': 'subtask',
+                'placeholder': 'Default study name is the file name.'}),
+            # 'data_file': forms.FileInput(attrs={
+            #     'class': 'subtask'})
+        }
 
-        # Get data file
-        data_file = self.cleaned_data['data_file'].file
+    # def validate(self):
+    #     # Check Django class ModelForm
 
-        # Read data as dataframe
-        df = pd.read_csv(data_file)
+    # def clean(self):
+    #     # If not file name provided, use name of file
+    #     if self.cleaned_data['file_name'] is None:
+    #         self.cleaned_data['file_name'] = self.cleaned_data[
+    #             'data_file'].name
 
-        # Check column names
-        if 'Time' not in df.keys():
-            raise ValueError('Missing Time column.')
-        if 'Y' not in df.keys():
-            raise ValueError('Missing Y column.')
-        if 'ConcInit' not in df.keys():
-            raise ValueError('Missing ConcInit column.')
+    #     # Get data file
+    #     data_file = self.cleaned_data['data_file'].file
+
+    #     # Read data as dataframe
+    #     df = pd.read_csv(data_file)
+
+    #     # Check column names
+    #     if 'Time' not in df.keys():
+    #         raise ValueError('Missing Time column.')
+    #     if 'Y' not in df.keys():
+    #         raise ValueError('Missing Y column.')
+    #     if 'ConcInit' not in df.keys():
+    #         raise ValueError('Missing ConcInit column.')
 
 
