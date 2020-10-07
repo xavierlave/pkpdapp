@@ -6,13 +6,14 @@
 
 from django.urls import path
 
-from . import views
-from . import demo_simulation_dash_board  # noqa
+from . import dashboard, views  # noqa
 
 
-app_name = 'simulate'
+app_name = 'auce'
 
 urlpatterns = [
-    path('', views.BuildModelView.as_view(), name='build-model'),
-    path('simulation', views.SimulationView.as_view(), name='simulation'),
+    path(
+        'explore', views.PharmacodynamicExploreDataView.as_view(),
+        name='explore'),
+    path('upload', views.PharmacodynamicDataView.as_view(), name='upload'),
 ]
