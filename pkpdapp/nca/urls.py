@@ -15,5 +15,5 @@ from . import (  # noqa
 app_name = 'nca'
 
 urlpatterns = [
-    path('', views.NCAView.as_view(), name='nca'),
+    path('', views.NCAView.as_view(), name='explore'),
 ]
