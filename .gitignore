@@ -21,4 +21,4 @@ migrations
 .DS_Store
 
 # static files
-static
+pkpdapp/static
